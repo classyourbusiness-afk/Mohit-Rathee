@@ -1,0 +1,29 @@
+{
+  "entities": {
+    "UserSettings": {
+      "title": "UserSettings",
+      "description": "User preferences and trade history.",
+      "type": "object",
+      "properties": {
+        "history": {
+          "type": "array",
+          "description": "User's trade history"
+        },
+        "learningState": {
+          "type": "object",
+          "description": "User's AI learning metrics"
+        },
+        "lastSynced": {
+          "type": "string",
+          "description": "Last time user logged sync"
+        }
+      }
+    }
+  },
+  "firestore": {
+    "/userSettings/{uid}": {
+      "schema": "UserSettings",
+      "description": "Stores individual user app preferences and trading signals history."
+    }
+  }
+}
